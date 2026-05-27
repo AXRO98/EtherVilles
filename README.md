@@ -13,11 +13,126 @@ Sistem ini dibuat menggunakan:
 Server Minecraft saya menggunakan:
 
 - Minecraft Bedrock Dedicated Server (BDS)
-- Vanilla Minecraft Bedrock
+- Vanilla Minecraft Bedrock v1.26.21.1
 - VPS Ubuntu Server 24.04 LTS
 
 ---
 
+---
+
+# FAQ
+
+## Cara kerja chat Minecraft ke Discord gimana?
+
+Sederhananya:
+
+```text
+Minecraft Addon (main.js)
+        ↓
+WebSocket
+        ↓
+Python API (api.py)
+        ↓
+Discord Bot
+        ↓
+Discord Channel
+```
+
+Addon Script API di Minecraft akan menangkap chat player lalu mengirim data ke `api.py` menggunakan WebSocket.
+
+Setelah itu Python API akan meneruskan pesan tersebut ke Discord menggunakan bot Discord (`discord.py`).
+
+---
+
+## Cara kerja chat Discord ke Minecraft gimana?
+
+Sama juga tapi kebalikannya:
+
+```text
+Discord
+        ↓
+Discord Bot
+        ↓
+Python API
+        ↓
+WebSocket
+        ↓
+Minecraft Addon
+        ↓
+Chat Minecraft
+```
+
+Bot Discord membaca pesan dari channel Discord lalu mengirim payload ke addon Minecraft melalui WebSocket.
+
+---
+
+## Ini bisa dipakai di Minecraft Bedrock versi berapa aja?
+
+Minimal Minecraft Bedrock versi `1.21+`.
+
+Karena project ini menggunakan:
+
+- Script API terbaru
+- `@minecraft/server-net`
+- WebSocket API
+
+Versi lama kemungkinan belum support.
+
+---
+
+## Bisa dipakai di PocketMine-MP?
+
+Kurang tau karena saya sendiri pakainya:
+
+- Minecraft Bedrock Dedicated Server (BDS)
+- Vanilla Bedrock resmi dari Mojang
+
+Jadi belum pernah test di PocketMine-MP.
+
+---
+
+## Kenapa harus pakai Experimental Features?
+
+Karena Script API Bedrock masih menggunakan fitur experimental.
+
+Beberapa module seperti:
+
+- `@minecraft/server`
+- `@minecraft/server-net`
+
+membutuhkan Experimental Features aktif.
+
+---
+
+## Bisa jalan di Windows?
+
+Harusnya bisa.
+
+Tapi saya develop dan test semuanya di:
+
+```text
+Ubuntu Server 24.04 LTS
+```
+
+jadi belum banyak test di Windows.
+
+---
+
+## Kenapa pakai BDS resmi Mojang?
+
+Karena lebih stabil untuk testing Script API Bedrock dibanding server software lain.
+
+Dan memang Script API Bedrock paling cocok dipakai di BDS resmi.
+
+---
+
+## Apakah addon ini open source?
+
+Kalau project ini diupload ke GitHub berarti bebas dipelajari dan dimodifikasi.
+
+Silakan dikembangkan lagi kalau mau bikin sistem yang lebih kompleks.
+
+---
 # Fungsi Sistem
 
 Sistem ini digunakan untuk:
@@ -61,7 +176,7 @@ Project ini dibuat dan dijalankan menggunakan:
 
 - Minecraft Bedrock Dedicated Server (BDS)
 - Vanilla Bedrock Server
-- Version `1.21.61.1`
+- Version `1.26.21.1`
 
 ## Operating System
 
