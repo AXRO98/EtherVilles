@@ -1,0 +1,31 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "EtherVilles",
+    "description": "EtherVilles script for Minecraft Bedrock Edition",
+    "uuid": "54067457-033d-488c-b83e-f6d9b02585fe",
+    "version": [1,0,0],
+    "min_engine_version": [1,21,0]
+  },
+
+  "modules": [
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "9ed889f9-c4f6-427a-ab8c-0ffe23832a81",
+      "version": [1,0,0],
+      "entry": "scripts/main.js"
+    }
+  ],
+
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.8.0-beta"
+    },
+    {
+      "module_name": "@minecraft/server-net",
+      "version": "beta"
+    }
+  ]
+}

@@ -348,29 +348,3 @@ Project ini dibuat untuk:
 Project ini hanyalah prototype / proof of concept.
 
 Masih banyak kekurangan, kode juga belum sempurna, dan sistem ini masih bisa dikembangkan jauh lebih bagus lagi.
-
----
-
-# Pengembangan Yang Bisa Ditambahkan
-
-Beberapa ide pengembangan berikutnya:
-
-- Authentication token
-- Multi server support
-- Multi Discord channel
-- Database logging
-- Dashboard admin
-- Player join/leave notification
-- Moderation tools
-- Anti spam system
-- Discord embed message
-- Cross-server communication
-- Voice channel integration
-- Web dashboard analytics
-- Advanced TPS analytics
-- Command bridge
-- Private messaging
-- Queue & retry system
-- Web authentication
-
----
